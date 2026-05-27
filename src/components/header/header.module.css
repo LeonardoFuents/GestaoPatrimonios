@@ -1,0 +1,97 @@
+.topbar {
+    height: 66px;
+    background-color: var(--vermelho);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.22);
+    width: 100%;
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.layout_guide {
+    width: min(88%, 1120px);
+}
+
+.logo {
+    width: 110px;
+    display: block;
+}
+
+.menu_list {
+    display: flex;
+    list-style: none;
+    gap: 180px;
+}
+
+.menu_link {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.user_area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+}
+
+.user_icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: var(--vermelho);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info strong {
+    font-size: 15px;
+}
+
+.user_info span {
+    font-size: 12px;
+}
+
+.arrow_button,
+.hamburguer {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburguer {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .hamburguer {
+        display: block;
+    }
+
+    .menu_list,
+    .user_area {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100px;
+    }
+}

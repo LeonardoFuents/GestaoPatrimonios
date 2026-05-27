@@ -1,0 +1,201 @@
+.login_page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+}
+
+.login_banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 16px 16px 0;
+}
+
+.banner_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background-color: #7a1c1c;
+}
+
+.banner_content {
+    position: absolute;
+    left: 80px;
+    top: 43%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    z-index: 1;
+}
+
+.banner_content_text {
+    max-width: 310px;
+    font-size: 25px;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.senai_logo {
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 28px;
+    display: block;
+}
+
+.banner_content h2 {
+    font-size: var(--tamanho-fonte-subtitulo);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.banner_content p {
+    font-size: var(--tamanho-fonte-padrao);
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.login_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.login_form {
+    width: 100%;
+    max-width: 520px;
+}
+
+.login_form h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--tamanho-fonte-titulo);
+    margin-bottom: 80px;
+    color: var(--cor-vermelha);
+}
+
+.form_group {
+    margin-bottom: 50px;
+}
+
+.form_group label {
+    display: block;
+    font-size: var(--tamanho-fonte-padrao);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.form_group input {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 16px;
+    padding: 0 18px;
+    font-size: var(--tamanho-fonte-padrao);
+    background-color: #ffffff;
+    outline: none;
+}
+
+.form_group input::placeholder {
+    color: #777777;
+}
+
+.password_field {
+    position: relative;
+}
+
+.password_field input {
+    padding-right: 58px;
+}
+
+.show_password {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.login_button {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #ff0000, #a90f0f);
+    color: #ffffff;
+    font-size: var(--tamanho-fonte-padrao);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.login_button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+}
+
+.login_button:focus,
+.form_group input:focus,
+.show_password:focus {
+    outline: 3px solid rgba(255, 0, 0, 0.35);
+    outline-offset: 3px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .login_page {
+        grid-template-columns: 1fr;
+    }
+
+    .login_banner {
+        min-height: 360px;
+        border-radius: 0;
+    }
+
+    .banner_content {
+        left: 40px;
+    }
+
+    .senai_logo {
+        width: 260px;
+    }
+
+    .banner_content h1 {
+        font-size: 26px;
+    }
+
+    .banner_content p {
+        font-size: 20px;
+    }
+
+    .login_form h2 {
+        margin-bottom: 50px;
+    }
+    
+    .banner_content_text {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .login_area {
+        padding: 30px 20px;
+    }
+
+    .banner_content {
+        left: 24px;
+    }
+
+    .form_group label {
+        font-size: 20px;
+    }
+
+    .form_group input,
+    .login_button {
+        height: 60px;
+        font-size: 16px;
+    }
+}

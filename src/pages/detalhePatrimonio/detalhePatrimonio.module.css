@@ -1,0 +1,219 @@
+.layout_guide {
+    width: min(88%, 1120px);
+}
+
+.page_content {
+    min-height: calc(100vh - 66px);
+    padding: 52px 0 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page_detalhes {
+    display: flex;
+    flex-direction: column;
+}
+
+.back_link {
+    color: var(--vermelho);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 46px;
+    display: inline-block;
+}
+
+.titulo_patrimonio {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.patrimonio_card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    padding: 48px 80px;
+}
+
+.patrimonio_content {
+    display: grid;
+    grid-template-columns: 1.6fr 0.7fr 1.1fr 1fr 1fr;
+    gap: 46px;
+    align-items: center;
+}
+
+.patrimonio_content dt {
+    color: var(--cinza-texto);
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.patrimonio_content dd {
+    color: var(--texto);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.patrimonio_content dl:first-child dd {
+    max-width: 230px;
+}
+
+.table_section {
+    margin-top: 40px;
+}
+
+.table_section h2 {
+    font-size: 24px;
+    margin-bottom: 48px;
+}
+
+.history_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 32px;
+}
+
+.history_table th {
+    padding: 0 24px 12px;
+    border-bottom: 1px solid #c4c8ce;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--cinza-texto);
+}
+
+.history_table td {
+    background-color: #ffffff;
+    padding: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.history_table tbody tr td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.history_table tbody tr td:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.status_badge {
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 10px;
+    background-color: #ccffe0;
+    color: #00851c;
+}
+
+.action_icon_button {
+    background: transparent !important;
+    border: none !important;
+    color: var(--vermelho) !important; 
+    font-size: 20px !important;
+    cursor: pointer;
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.action_icon_button:hover {
+    transform: scale(1.15);
+}
+
+@media (max-width: 1200px) {
+    .page_content {
+        padding: 38px 0 60px;
+    }
+
+    .back_link {
+        font-size: 18px;
+        margin-bottom: 32px;
+    }
+
+    .titulo_patrimonio {
+        font-size: 22px;
+    }
+
+    .patrimonio_card {
+        padding: 28px;
+    }
+
+    .patrimonio_content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .table_section h2 {
+        margin-bottom: 24px;
+    }
+
+    .history_table,
+    .history_table thead,
+    .history_table tbody,
+    .history_table tr,
+    .history_table th,
+    .history_table td {
+        display: block;
+        width: 100%;
+    }
+
+    .history_table thead {
+        display: none;
+    }
+
+    .history_table {
+        border-spacing: 0;
+    }
+
+    .history_table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .history_table tr {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .history_table td {
+        background-color: transparent;
+        padding: 10px 0;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .history_table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #111111;
+    }
+
+    .history_table tbody tr td:first-child,
+    .history_table tbody tr td:last-child {
+        border-radius: 0;
+    }
+
+    .status_badge {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .patrimonio_card {
+        padding: 22px;
+    }
+
+    .history_table td {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
