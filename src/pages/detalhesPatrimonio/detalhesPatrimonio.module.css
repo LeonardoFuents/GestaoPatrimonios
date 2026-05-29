@@ -1,0 +1,170 @@
+.layout_guide {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.page_content {
+    min-height: calc(100vh - 78px);
+    padding: 60px 0 100px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.title_container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back_button {
+    background: transparent;
+    border: none;
+    color: #cf2929;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.back_button:hover {
+    transform: translateX(-4px);
+}
+
+.page_header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.card_section {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.details_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.detail_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail_label {
+    font-size: 14px;
+    color: #777777;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail_value {
+    font-size: 20px;
+    color: #111111;
+    font-weight: 700;
+}
+
+.status_badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status_Ativo {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.status_Inativo {
+    background-color: #fce8e6;
+    color: #c5221f;
+}
+
+.status_Transferido {
+    background-color: #e8f0fe;
+    color: #1967d2;
+}
+
+.status_default {
+    background-color: #f1f3f4;
+    color: #5f6368;
+}
+
+.action_area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 24px;
+}
+
+.transfer_btn {
+    height: 48px;
+    background-color: #cf2929;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.transfer_btn:hover {
+    background-color: #b02020;
+}
+
+@media (max-width: 768px) {
+    .page_header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card_section {
+        padding: 24px;
+    }
+
+    .details_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action_area {
+        flex-direction: column;
+    }
+
+    .transfer_btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

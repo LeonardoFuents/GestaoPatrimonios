@@ -1,24 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./header.module.css";
+import { getUsuarioLogado, logout } from "@/pages/api/authService";
 
 const Header = () => {
+    const router = useRouter();
+    const [nome, setNome] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+
+    useEffect(() => {
+
+        const usuario = getUsuarioLogado();
+        setNome(usuario.nome);
+        setEmail(usuario.email);
+    }, []);
+
+    function handleLogout() {
+        logout();
+        router.push("/login");
+    }
+
     return (
         <header className={styles.topbar}>
-            <nav className={`${styles.navbar} layout_guide`} aria-label="Menu principal">
-                
-                <Link href="#" className={styles.logo_link} aria-label="Página inicial">
+            <nav className={`${styles.navbar} ${styles.layout_guide}`} aria-label="Menu principal">
+
+                <Link href="/listaAmbientes" className={styles.logo_link} aria-label="Página inicial">
                     <img src="/imgs/Logo Senai.png" alt="Logo SENAI" className={styles.logo} />
                 </Link>
 
                 <ul className={styles.menu_list}>
                     <li>
-                        <a href="#" className={styles.menu_link}>
-                            Ambientes <i className="fa-solid fa-chevron-down"></i>
-                        </a>
+                        <Link href="/listaAmbientes" className={styles.menu_link}>
+                            Ambientes
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" className={styles.menu_link}>Patrimônios</a>
+                        <Link href="/listaAprovacoes" className={styles.menu_link}>
+                            Aprovações
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/todosPatrimonios" className={styles.menu_link}>
+                            Patrimônios
+                        </Link>
                     </li>
                 </ul>
 
@@ -28,19 +53,24 @@ const Header = () => {
                     </button>
 
                     <div className={styles.user_info}>
-                        <strong>Késsia Milena</strong>
-                        <span>kessia@sp.senai.br</span>
+                        <strong title={nome}>{nome || "Usuário"}</strong>
+                        <span title={email}>{email || "—"}</span>
                     </div>
 
-                    <button className={styles.arrow_button} aria-label="Abrir opções da conta">
-                        <i className="fa-solid fa-chevron-down"></i>
+                    <button
+                        className={styles.arrow_button}
+                        aria-label="Sair do sistema"
+                        title="Sair"
+                        onClick={handleLogout}
+                    >
+                        <i className="fa-solid fa-right-from-bracket"></i>
                     </button>
                 </section>
 
                 <button className={styles.hamburguer} aria-label="Abrir opções de menu">
                     <i className="fa-solid fa-bars"></i>
                 </button>
-                
+
             </nav>
         </header>
     );
